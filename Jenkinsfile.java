@@ -1,10 +1,20 @@
-Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent { docker 'maven:3.3.3' }
+    agent any
+
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                git status
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
